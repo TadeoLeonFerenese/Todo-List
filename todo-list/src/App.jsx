@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { TodoList } from "./components/TodoList";
 import {  v4 as uuidv4} from "uuid"
-import { BsFillTrashFill } from "react-icons/fa";
+
 
 
 const KEY = "todoAPP.todos";
@@ -47,7 +47,7 @@ return(
        <TodoList todos= {todos} toggleTodo={toggleTodo} /> 
        <input ref={todoTaskRef} type="text" placeholder="Nueva Tarea" />
        <button onClick={handleTodoAdd}>+</button>
-       <button><BsFillTrashFill /></button>
+       <button>🗑️</button>
        <div>
            Te quedan {todos.filter((todo) => !todo.completed).length} tareas por terminar
        </div>
