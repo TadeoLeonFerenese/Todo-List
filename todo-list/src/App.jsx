@@ -15,7 +15,7 @@ useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(KEY));
     if(storedTodos)
     setTodos(storedTodos);
-    }, [todos]);
+    }, []);
 
 useEffect(() => {
 localStorage.setItem(KEY, JSON.stringgify(todos))
@@ -47,7 +47,7 @@ return(
        <TodoList todos= {todos} toggleTodo={toggleTodo} /> 
        <input ref={todoTaskRef} type="text" placeholder="Nueva Tarea" />
        <button onClick={handleTodoAdd}>+</button>
-       <button>🗑️</button>
+       <button>-</button>
        <div>
            Te quedan {todos.filter((todo) => !todo.completed).length} tareas por terminar
        </div>
